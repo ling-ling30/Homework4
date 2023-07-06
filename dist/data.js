@@ -1,3 +1,8 @@
+const minAgeRequirement = 25
+const minNameLengthRequirement = 10
+const minIncomeRequirement = 100000
+const maxIncomeRequirement = 1000000
+
 document.getElementById("registration").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
     
@@ -11,9 +16,9 @@ document.getElementById("registration").addEventListener("submit", function(even
 
 
   const filter = (data) => {
-    if(data.name.length >= 10
-        && data.age >=25
-        && data.income >= 100000 &&
-        data.income <= 1000000) { Database.set("myData", data);
+    if(data.name.length >= minNameLengthRequirement
+        && data.age >= minAgeRequirement
+        && data.income >= minIncomeRequirement &&
+        data.income <= maxIncomeRequirement) { Database.set("myData", data);
         location.reload()}
     }

@@ -31,7 +31,7 @@ const rewriteData = (data) => {
     //select  Div and append it to the body
     let newDiv = document.getElementById("resume")
     let resume = document.createElement("h1")
-    resume.classList.add("text-l", "ml-5")
+    resume.classList.add("text-s", "ml-5", "font-medium","font-mono")
     resume.textContent= `Rata rata pendaftar memiliki uang sangu sebesar ${averageIncome.toFixed(2)} dengan rata rata umur ${averageAge.toFixed(2)}`
     newDiv.replaceChildren(resume)
     
@@ -39,7 +39,7 @@ const rewriteData = (data) => {
 
 
    
-    //mapping and create newrow
+    //mapping data to make <tr><th><th><th></tr>
     
     const newRow =data.map(function (item){
         // create row
@@ -96,11 +96,7 @@ const fetchDataFromLocalStorage = ()=> {
 }
 
 
-
-
-
 fetchDataFromLocalStorage()
-// dataArray.forEach(fetchDataFromLocalStorage)
 window.addEventListener("storage", fetchDataFromLocalStorage);
 
 
